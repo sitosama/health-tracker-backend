@@ -7,13 +7,9 @@ from .serializers import SleepSerializer, ExerciseSerializer, DietSerializer
 
 
 class SleepViewSet(viewsets.ModelViewSet):  # ModelViewSetを継承していることを確認
+    # class SleepViewSet(generics.ListAPIView):　こいつを使うとget_extra_actionsという属性が存在しないために発生
     queryset = Sleep.objects.all()
     serializer_class = SleepSerializer
-
-
-# class SleepViewSet(generics.CreateAPIView):
-#     queryset = Sleep.objects.all()
-#     serializer_class = SleepSerializer
 
 
 class ExerciseViewSet(viewsets.ModelViewSet):

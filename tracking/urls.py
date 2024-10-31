@@ -11,4 +11,8 @@ router.register(r"diet", DietViewSet)
 urlpatterns = [
     path("", include(router.urls)),
     path("sleep/", views.SleepViewSet.as_view({"get": "list"}), name="sleep-create"),
+    path(
+        "Exercise/", views.ExerciseViewSet.as_view({"get": "list"}), name="sleep-create"
+    ),
+    path("Diet/", views.DietViewSet.as_view({"get": "list"}), name="sleep-create"),
 ]
