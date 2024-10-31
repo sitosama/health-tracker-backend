@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class Sleep(models.Model):
     date = models.DateField()
-    sleep_duration = models.FloatField()
+    sleep_duration = models.FloatField()  # 睡眠時間（時間単位）
     sleep_quality = models.CharField(max_length=50)
 
 

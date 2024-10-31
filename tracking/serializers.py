@@ -1,3 +1,4 @@
+# データをJSON形式で返すためのシリアライザを定義
 from rest_framework import serializers
 from .models import Sleep, Exercise, Diet
 
