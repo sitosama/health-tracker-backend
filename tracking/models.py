@@ -10,11 +10,23 @@ class Sleep(models.Model):
 
 class Exercise(models.Model):
     date = models.DateField()
-    type = models.CharField(max_length=50)
-    duration = models.FloatField()
+    exercise_type = models.CharField(
+        max_length=100, default="運動未定義"
+    )  # デフォルト値を設定
+    duration = models.IntegerField()  # 運動時間（分）
+    intensity = models.CharField(max_length=10, default="中")  # デフォルト値を設定
+
+    def __str__(self):
+        return f"{self.date} - {self.exercise_type} - {self.duration}分"
 
 
 class Diet(models.Model):
     date = models.DateField()
-    meal = models.CharField(max_length=50)
-    calories = models.IntegerField()
+    meal_type = models.CharField(
+        max_length=50
+    )  # 食事の種類（朝食、昼食、夕食、スナック）
+    calories = models.IntegerField()  # カロリー
+    notes = models.TextField(blank=True, null=True)  # メモ（オプション）
+
+    def __str__(self):
+        return f"{self.date} - {self.meal_type} - {self.calories} kcal"
